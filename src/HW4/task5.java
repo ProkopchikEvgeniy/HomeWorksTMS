@@ -1,10 +1,9 @@
-package HW3;
+package HW4;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class task2 {
+public class task5 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Введите размер массива:");
@@ -13,18 +12,13 @@ public class task2 {
         for(int i=0;i<size;i++){
             array[i]= (int)(Math.random()*10);
         }
-        int max = array[0];
-        int min = array[0];
+        int var=0;
         System.out.println(Arrays.toString(array));
-        for(int i =1;i<size;i++){
-            if(array[i]>max){
-                max=array[i];
-            }
-            if(array[i]<min){
-                min=array[i];
-            }
+        for(int i=0;i<(size)/2;i++){
+            var=array[i];
+            array[i]=array[size-1-i];
+            array[size-1-i]=var;
         }
-        System.out.println("Max = "+max);
-        System.out.println("Min = "+min);
+        System.out.println(Arrays.toString(array));
     }
 }

@@ -1,4 +1,4 @@
-package HW3;
+package HW4;
 
 import java.util.Arrays;
 import java.util.Scanner;

@@ -1,9 +1,9 @@
-package HW3;
+package HW4;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class task6 {
+public class task2 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Введите размер массива:");
@@ -12,23 +12,18 @@ public class task6 {
         for(int i=0;i<size;i++){
             array[i]= (int)(Math.random()*10);
         }
-        boolean check =false;
+        int max = array[0];
+        int min = array[0];
         System.out.println(Arrays.toString(array));
-        for(int i=1;i<size;i++){
-          if(array[i]>array[i-1]){
-              check=true;
-          }
-          else{
-              check=false;
-              break;
-          }
+        for(int i =1;i<size;i++){
+            if(array[i]>max){
+                max=array[i];
+            }
+            if(array[i]<min){
+                min=array[i];
+            }
         }
-        if(check){
-            System.out.println("Является");
-        }
-        else {
-            System.out.println("Не является");
-        }
-
+        System.out.println("Max = "+max);
+        System.out.println("Min = "+min);
     }
 }
