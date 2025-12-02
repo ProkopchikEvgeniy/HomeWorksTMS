@@ -19,23 +19,20 @@ public class task7 {
             number+=(int)(array[i]*Math.pow(10,size-1-i));
         }
         number++;
-        if(number/Math.pow(10,size-1)==10){
+
+        int[] result;
+        if(number/Math.pow(10,size-1)==10) {
             size++;
-            int[] newArray = new int[size];
-            for(int i=size-1;i>=0;i--){
-                newArray[i]=number%10;
-                number-=number%10;
-                number/=10;
-            }
-            System.out.println("newArray = "+Arrays.toString(newArray));
+            result = new int[size];
         }
         else{
-            for(int i=size-1;i>=0;i--){
-                array[i]=number%10;
-                number-=number%10;
-                number/=10;
-            }
-            System.out.println("newArray = "+Arrays.toString(array));
+            result=array;
         }
+        for(int i=size-1;i>=0;i--){
+            result[i]=number%10;
+            number-=number%10;
+            number/=10;
+        }
+        System.out.println("result = "+Arrays.toString(result));
     }
 }
